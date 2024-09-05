@@ -73,15 +73,8 @@ const fetchNowPlaying = async (accessToken: string): Promise<NowPlayingResponse 
   const response = await fetch(NOW_PLAYING_ENDPOINT, {
     headers: { Authorization: `Bearer ${accessToken}` },
   })
-
-  if (response.status === 204 || response.status > 400) {
-    return false
-  }
-
-  if (!response.ok) {
-    throw new Error(`Failed to fetch now playing: ${response.statusText}`)
-  }
-
+  if (response.status === 204 || response.status > 400) return false
+  if (!response.ok) throw new Error(`Failed to fetch now playing: ${response.statusText}`)
   return response.json()
 }
 
@@ -103,9 +96,7 @@ export default async function getNowPlayingItem(): Promise<
     const { access_token } = await getAccessToken()
     const nowPlaying = await fetchNowPlaying(access_token)
 
-    if (!nowPlaying) {
-      return false
-    }
+    if (!nowPlaying) return false
 
     const { item, is_playing, progress_ms } = nowPlaying
     const { artists, external_urls, name, album, duration_ms } = item

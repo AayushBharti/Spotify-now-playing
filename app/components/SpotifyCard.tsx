@@ -34,7 +34,7 @@ const SpotifyPlayer: React.FC = () => {
 
     const interval = setInterval(() => {
       fetchNowPlaying()
-    }, 30000) // 30 seconds interval
+    }, 10000) // 10 seconds interval
 
     return () => clearInterval(interval) // Clean up interval on unmount
   }, [])
