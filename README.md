@@ -18,7 +18,7 @@ A **Next.js** application that displays your currently playing track on Spotify 
 
 <!-- Add some screenshots here if available -->
 
-![Spotify Now Playing](https://spotify-live-view.vercel.app/screenshot.jpg)
+![Spotify Now Playing](https://github.com/AayushBharti/spotify-now-playing/blob/main/public/screenshot.jpg)
 
 ## Tech Stack 🛠️
 
